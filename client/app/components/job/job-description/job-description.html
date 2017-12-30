@@ -1,0 +1,59 @@
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+        <div class="tile">
+            <div class="tile is-parent is-vertical">
+                <!--  -->
+                <div class="tile">
+                    <article class="tile is-child notification is-primary">
+                        <p class="title">job Name</p>
+                        <p class="subtitle">{{vm.job.title}}</p>
+                    </article>
+                </div>
+                <a class="button tile is-child notification is-success is-outlined" ng-disabled="vm.buttonClicked" ng-click="vm.clickFunc(); vm.clicked()">{{vm.buttonName}}</a>
+                <article class="tile is-child notification is-warning">
+                    <p class="title">Publisher Email</p>
+                    <p class="subtitle">{{vm.job.publisher}}</p>
+                </article>
+            </div>
+
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-info">
+                    <p class="title">Publish Date</p>
+                    <p class="subtitle">{{vm.job.publishedDate}}</p>
+                    <publish-job job-obj="vm.job" publish-name="vm.publishName"></publish-job>
+                    <!-- <job-update ng-if="vm.jobUpdate"></job-update> -->
+                    </article>
+            </div>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child notification is-danger">
+                <p class="title">Skills</p>
+                <p class="subtitle">
+                    <div ng-repeat="skill in vm.job.skills" >
+                            {{skill}}
+                    </div>
+                </p>
+                <div class="content">
+                    <!-- Content -->
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="tile is-parent is-vertical">
+        <article class="tile is-child notification is-primary">
+            <p class="title">job Description</p>
+            <p class="subtitle">{{vm.job.description}}</p>
+        </article>
+        <article class="tile is-child notification is-warning">
+            <p class="title">Publisher Location</p>
+            <p class="subtitle">latitude: {{vm.job.location.lat}} longitude: {{vm.job.location.lng}}</p>
+        </article>
+    </div>
+</div>
+<!-- id: element._id,
+title: element.title,
+publisher: element.publisher,
+publishDate: new Date(element.publishedDate).toDateString(),
+skills: element.skills,
+description: element.description,
+location: element.location -->

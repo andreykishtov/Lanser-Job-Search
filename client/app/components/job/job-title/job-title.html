@@ -1,0 +1,5 @@
+<div class="subtitle columns">
+    <div ng-repeat="title in vm.titles" ng-click="vm.sortBy(title)" class="column job-{{title}}">
+        {{title}}<span class="sortorder" ng-show="vm.sortTitle === title" ng-class="{reverse: vm.reverse}"></span>
+    </div>
+</div>
