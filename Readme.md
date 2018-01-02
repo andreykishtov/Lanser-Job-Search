@@ -1,13 +1,13 @@
 # Lanser Doc
 
-
 ## Server
-```
 
 ```
 
+```
 
-### Jobs Rest api
+### Jobs Rest API
+
 ```
 http://Url:port/api
 
@@ -35,16 +35,17 @@ json: {
 }
 /:email get request with email address that finds a job by email of user
 
-/:id get request with job id that finds a job by job id 
+/:id get request with job id that finds a job by job id
 
 /:id removes job by job id
 
-/aplicant/:id finds a job by user that applied to that job 
+/aplicant/:id finds a job by user that applied to that job
 
 /applicants/:id gives an array of user ids that applied to that job by job id
 ```
 
-### User Rest api
+### User Rest API
+
 ```
 /post create user by json
 json {
@@ -66,7 +67,7 @@ json {
 
 /validate post sends password and email address
 json {
-    
+
 }
 router.route('/validate').post(UserController.validate);
 router.route('/:email').get(UserController.findUser);
