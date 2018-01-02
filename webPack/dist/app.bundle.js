@@ -67,15 +67,31 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
+"use strict";
 
+
+var _robot = __webpack_require__(1);
+
+var _robot2 = _interopRequireDefault(_robot);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+document.write((0, _robot2.default)('Affirmative', 'Dave'));
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-alert('This script is alive!!!');
+"use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var greetings = function greetings(text, person) {
+  return text + ", " + person + ". I got you but I\u2019m sorry,\n  I\u2019m afraid I can\u2019t do that.\n  it is against my conscience";
+};
+exports.default = greetings;
 
 /***/ })
 /******/ ]);
