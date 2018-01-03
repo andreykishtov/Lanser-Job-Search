@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
