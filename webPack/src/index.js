@@ -1,23 +1,28 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
-import LocalStorageModule from 'angular-local-storage';
+// import LocalStorageModule from 'angular-local-storage';
 
 import routing from './index.config';
 import './stylesheets/bulma.css';
+import './stylesheets/style.css';
 
-angular
-  .module('lanser', [uirouter, LocalStorageModule])
-  .config(routing)
-  .run([
-    '$state',
-    function ($state) {
-      $state.go('home');
-    }
-  ])
-  .constant('API', {
-    // URL: 'http://ec2-18-221-91-138.us-east-2.compute.amazonaws.com:7575/api'
-    URL: 'http://localhost:7575/api'
-  });
+import home from './components/feature/Home';
+
+angular.module('lanser', [uirouter, home]).config(routing);
+
+// angular
+//   .module('lanser', [uirouter, LocalStorageModule])
+//   .config(routing)
+//   .run([
+//     '$state',
+//     function ($state) {
+//       $state.go('home');
+//     }
+//   ])
+//   .constant('API', {
+//     // URL: 'http://ec2-18-221-91-138.us-east-2.compute.amazonaws.com:7575/api'
+//     URL: 'http://localhost:7575/api'
+//   });
 
 // $stateProvider => {
 //   const home = {
