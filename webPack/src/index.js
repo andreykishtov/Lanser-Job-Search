@@ -1,12 +1,51 @@
-import greetings from './robot';
+import angular from 'angular';
+import uirouter from 'angular-ui-router';
+import LocalStorageModule from 'angular-local-storage';
 
-document.write(greetings('Affirmative', 'Dave'));
+import routing from './index.config';
+import './stylesheets/bulma.css';
 
-import styles from './globals.css';
+angular
+  .module('lanser', [uirouter, LocalStorageModule])
+  .config(routing)
+  .run([
+    '$state',
+    function ($state) {
+      $state.go('home');
+    }
+  ])
+  .constant('API', {
+    // URL: 'http://ec2-18-221-91-138.us-east-2.compute.amazonaws.com:7575/api'
+    URL: 'http://localhost:7575/api'
+  });
 
-const element = `
-<div class="element">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur laudantium recusandae itaque libero velit minus ex reiciendis veniam. Eligendi modi sint delectus beatae nemo provident ratione maiores, voluptatibus a tempore!</p>
-</div>
-`;
-document.write(element);
+// $stateProvider => {
+//   const home = {
+//     name: 'home',
+//     url: '/',
+//     template: '<home></home>'
+//   };
+
+//   const login = {
+//     name: 'login',
+//     url: '/login',
+//     template: '<login></login>'
+//   };
+
+//   const profile = {
+//     name: 'profile',
+//     url: '/profile',
+//     template: '<profile></profile>'
+//   };
+
+//   const register = {
+//     name: 'register',
+//     url: '/register',
+//     template: '<register></register>'
+//   };
+
+//   $stateProvider.state(home);
+//   $stateProvider.state(login);
+//   $stateProvider.state(register);
+//   $stateProvider.state(profile);
+// }
