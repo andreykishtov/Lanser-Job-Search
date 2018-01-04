@@ -1,16 +1,19 @@
 import constants from './app.constants';
 
-function AppConfig($stateProvider, $urlRouterProvider) {
+function AppConfig($locationProvider, $stateProvider, $urlRouterProvider) {
   'ngInject';
 
-  $stateProvider.state(constants.appName, {
-    abstract: true,
-    templateUrl: 'layout/app-view.html'
+  $locationProvider.html5Mode(true);
+
+  $stateProvider.state(`${constants.appName}`, {
+    url: '/',
+    templateUrl: 'index.html',
+    title: 'home'
   });
 
   $urlRouterProvider.otherwise('/');
 }
 
-AppConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+AppConfig.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
 
 export default AppConfig;
